@@ -60,25 +60,42 @@ public:
 		cout << saat << ":" << dakika[*dk]; 
 	}
 
-	void gidissüresi(int _sehir) {
+	void gidissüresi(int _sehir,int _sehir2) {
+		süre = 25;
 		int saat = 0;
 		int dakika = 0;
 		int sure;
-		ptr = &_sehir ;
+		int sehir1;
+		int sehir2;
+		ptr = &_sehir;
 		string metin1;
 		metin1 = il[*ptr];
-		sure = metin1.length()* süre;
+		sehir1 = metin1.length();
+		ptr = &_sehir2;
+		string metin2;
+		metin2 = il[*ptr];
+		sehir2 = metin1.length();
+		sure = (sehir1 + sehir2) * süre;
 		saat = sure / 60;
 		dakika = sure % 60;
 		cout << "Gidiş süresi: " << saat << " saat " << dakika << " dakika\n";
 	}
 
-	void gidisfiyatı(int _sehir2) {
-		
+	void gidisfiyatı(int _sehir, int _sehir2) {
+		arac = 400;
+
 		string metin;
+		string metin1;
+		int sehir3;
+		int sehir4;
+
 		ptr = &_sehir2;
 		metin = il[*ptr];
-		int fiyat = metin.length() * arac;
+		 sehir3 = metin.length();
+		ptr = &_sehir;
+		metin1 = il[*ptr];
+	 sehir4 = metin1.length();
+		fiyat = (sehir3 + sehir4) * arac;
 		cout << "Bilet fiyatı: " << fiyat << " TL\n";
 	}
 
