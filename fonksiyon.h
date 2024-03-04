@@ -25,17 +25,17 @@ public:
 	void kfiyat(kara* bilet) {
 		cout << "\nbilet ücreti : ";
 			
-		bilet->gidisfiyatı(plaka);
+		bilet->gidisfiyatı(plaka,plaka1);
 		cout << "\ntoplam yolculuk süresi : ";
-	bilet->gidissüresi(plaka);
+	bilet->gidissüresi(plaka,plaka1);
 	}
 	
 	void hsüre(hava* bilet) {
 		cout << "\nbilet ücreti : ";
 			
-		bilet->gidisfiyatı(plaka);
+		bilet->gidisfiyatı(plaka,plaka1);
 cout << "\ntoplam yolculuk süresi : ";
-bilet->gidissüresi(plaka);
+bilet->gidissüresi(plaka,plaka1);
 
 	}
 	void  ana_fonksiyon() {
