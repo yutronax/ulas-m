@@ -9,7 +9,7 @@ using namespace std;
 
 
 
-class ulasım {
+class ulasÄ±m {
 private:
 	int saat;
 	
@@ -18,11 +18,11 @@ private:
 	string ad;
 	
 protected:
-	string il[82] = { "boş","Adana", "Adıyaman", "Afyon", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta", "Mersin", "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir", "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla", "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce" };
+	string il[82] = { "boÅŸ","Adana", "AdÄ±yaman", "Afyon", "AÄŸrÄ±", "Amasya", "Ankara", "Antalya", "Artvin", "AydÄ±n", "BalÄ±kesir", "Bilecik", "BingÃ¶l", "Bitlis", "Bolu", "Burdur", "Bursa", "Ã‡anakkale", "Ã‡ankÄ±rÄ±", "Ã‡orum", "Denizli", "DiyarbakÄ±r", "Edirne", "ElazÄ±ÄŸ", "Erzincan", "Erzurum", "EskiÅŸehir", "Gaziantep", "Giresun", "GÃ¼mÃ¼ÅŸhane", "Hakkari", "Hatay", "Isparta", "Mersin", "Ä°stanbul", "Ä°zmir", "Kars", "Kastamonu", "Kayseri", "KÄ±rklareli", "KÄ±rÅŸehir", "Kocaeli", "Konya", "KÃ¼tahya", "Malatya", "Manisa", "KahramanmaraÅŸ", "Mardin", "MuÄŸla", "MuÅŸ", "NevÅŸehir", "NiÄŸde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas", "TekirdaÄŸ", "Tokat", "Trabzon", "Tunceli", "ÅanlÄ±urfa", "UÅŸak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "KÄ±rÄ±kkale", "Batman", "ÅÄ±rnak", "BartÄ±n", "Ardahan", "IÄŸdÄ±r", "Yalova", "KarabÃ¼k", "Kilis", "Osmaniye", "DÃ¼zce" };
 
 	int* dk;
 	int arac;
-	int süre;
+	int sÃ¼re;
 	int fiyat;
 	int* ptr;
 public:
@@ -36,10 +36,11 @@ public:
 		cout << il[*ptr];
 
 	};
-	void il_tanımlama(int _il)
+	void il_tanÄ±mlama(int _il)
 	{
-
+		
 		ptr = &_il;
+		
 
 
 	}
@@ -51,7 +52,7 @@ public:
 	void saat2(int _dak) {
 		dk = &_dak;
 		if (saat > 24 || saat < 0) {
-			cout << "lütfen doğru bir saat belirleyin";
+			cout << "lÃ¼tfen doÄŸru bir saat belirleyin";
 			void saat1(int _saat);
 		}
 
@@ -59,26 +60,26 @@ public:
 		cout << saat << ":" << dakika[*dk]; 
 	}
 
-	void gidissüresi(int _sehir) {
+	void gidissÃ¼resi(int _sehir) {
 		int saat = 0;
 		int dakika = 0;
 		int sure;
 		ptr = &_sehir ;
 		string metin1;
 		metin1 = il[*ptr];
-		sure = metin1.length()* süre;
+		sure = metin1.length()* sÃ¼re;
 		saat = sure / 60;
 		dakika = sure % 60;
-		cout << "Gidiş süresi: " << saat << " saat " << dakika << " dakika\n";
+		cout << "GidiÅŸ sÃ¼resi: " << saat << " saat " << dakika << " dakika\n";
 	}
 
-	void gidisfiyatı(int _sehir2) {
+	void gidisfiyatÄ±(int _sehir2) {
 		
 		string metin;
 		ptr = &_sehir2;
 		metin = il[*ptr];
 		int fiyat = metin.length() * arac;
-		cout << "Bilet fiyatı: " << fiyat << " TL\n";
+		cout << "Bilet fiyatÄ±: " << fiyat << " TL\n";
 	}
 
 	
