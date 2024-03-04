@@ -56,18 +56,18 @@ void bilet_silme(list<fonksiyon>* b) {
     cout << "lütfen aramak istediğiniz kişinin numarasını girin : ";
     cin >> numaram;
     for (it = b->begin(); it != b->end(); it++) {
-        for (;;) {
+       
             if (it->getbiletnumarası() == numaram) {
                it=b->erase(it);
                return;
             }
-            else if(it== b->end()){
+            else {
             
                 cout << "bu bilet numarasına ait bir kişi bulunamamıştır.\n lütfen tekrar deneyiniz.\n";
-                cin >> numaram;
+                break;
             }
            
-        } 
+        
     }
 
 }
