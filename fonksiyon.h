@@ -1,142 +1,180 @@
 #pragma once
 #pragma once
 #pragma once
-#include "ulasım.h"
+#include "ulasÄ±m.h"
 #include "kara.h"
 #include <conio.h>
 #include <random>
 #include "hava.h"
-random_device rassayı;
-uniform_int_distribution <int> aralık(0, 3);
 
-int plaka; 
+	random_device rassayÄ±;
+	uniform_int_distribution <int> aralÄ±k(0, 3);
+class fonksiyon {
+public:
+	ulasÄ±m bilet;
+	int plaka;
+	int dugme;
+	int dakika;
+	  int plaka1;
+	  int saat;
+	  int sayÄ±1, sayÄ±2;
+	  string ad;
+ int bilet_numarasÄ±;
+	  bool cÄ±kÄ±s =true;
 
-void kfiyat(kara* bilet) {
-				bilet->gidisfiyatı(plaka);
-				
-}void hfiyat(hava* bilet) {
-	bilet->gidisfiyatı(plaka);
-
-}
-void ksüre(kara* bilet) {
-	bilet->gidissüresi(plaka);
-
-}
-void hsüre(hava* bilet) {
-	bilet->gidissüresi(plaka);
-
-}
-void  ana_fonksiyon() {
-
+	void kfiyat(kara* bilet) {
+		cout << "\nbilet Ã¼creti : ";
+			
+		bilet->gidisfiyatÄ±(plaka);
+		cout << "\ntoplam yolculuk sÃ¼resi : ";
+	bilet->gidissÃ¼resi(plaka);
+	}
 	
-	for (;;) {
-		
-		ulasım bilet;
-		bilet.isim();
-		string ad;
-		cin >> ad;
-		
-			cout << "\nlütfen bulunduğunuz şehrin plakasını giriniz\n"; 
-			int plaka1; 
+	void hsÃ¼re(hava* bilet) {
+		cout << "\nbilet Ã¼creti : ";
+			
+		bilet->gidisfiyatÄ±(plaka);
+cout << "\ntoplam yolculuk sÃ¼resi : ";
+bilet->gidissÃ¼resi(plaka);
+
+	}
+	void  ana_fonksiyon() {
+
+
+		while(cÄ±kÄ±s) {
+
+			
+			bilet.isim();
+			
+			cin >> ad;
+
+			cout << "\nlÃ¼tfen bulunduÄŸunuz ÅŸehrin plakasÄ±nÄ± giriniz\n";
+			
 			cin >> plaka1;
-			
-			
-			bilet.il_tanımlama(plaka1); 
+			for (;;) {
+				if (plaka1 < 0 || plaka1>81) {
+					cout << "\nlÃ¼tfen geÃ§erli bir plaka giriniz.\n";
+					cin >> plaka1;
+				}
+				else {
+					break;
+				}
+			}
+
+
+			bilet.il_tanÄ±mlama(plaka1);
 			bilet.il_bilgisi();
-			cout << "\nlütfen gitmek istediğiniz şehrin plakasını giriniz\n"; 
-			
+			cout << "\nlÃ¼tfen gitmek istediÄŸiniz ÅŸehrin plakasÄ±nÄ± giriniz\n";
+
 			cin >> plaka;
-			bilet.il_tanımlama(plaka);  
-			bilet.il_bilgisi(); 
-
-			cout << "\nlütfen saat giriniz\n";
-			int saat;
+			for (;;) {
+				if (plaka < 0 || plaka>81) {
+					cout << "\nlÃ¼tfen geÃ§erli bir plaka giriniz.\n";
+					cin >> plaka;
+				}
+				else {
+					break;
+				}
+			}
+			bilet.il_tanÄ±mlama(plaka);
+			bilet.il_bilgisi();
+			cout << "\nlÃ¼tfen saat giriniz\n";
+			
 			cin >> saat;
+			for (;;) {
+				if (saat< 0 || saat>81) {
+					cout << "\nlÃ¼tfen geÃ§erli bir saat giriniz.\n";
+					cin >> saat;
+				}
+				else {
+					break;
+				}
+			}
 			bilet.saat1(saat);
-			int sayı1, sayı2;
-			sayı1 = aralık(rassayı);
-			sayı2 = aralık(rassayı); 
 			
-				if (sayı1 == 0 || sayı2 == 0) {
-					cout << "\n00:boş yer yok\n";
-					
-				}
-				else {
-					cout << "\n00:0'a basın\n";
-				}
-				if (sayı1 == 1 || sayı2 == 1) {
-					cout << "\n15:boş yer yok\n";
-					
-				}
-				else {
-					cout << "\n15:1'a basın\n";
-				}
-				if (sayı1 == 2 || sayı2 == 2) {
-					cout << "\n30:boş yer yok\n";
-					
-				}
-				else {
-					cout << "\n30:2'a basın\n";
-				}
-				if (sayı1 == 3 || sayı2 == 3) {
-					cout << "\n45:boş yer yok\n";
-					
-				}
-				else {
-					cout << "\n45:3'a basın\n";
-				}
-			
+			sayÄ±1 = aralÄ±k(rassayÄ±);
+			sayÄ±2 = aralÄ±k(rassayÄ±);
+
+			if (sayÄ±1 == 0 || sayÄ±2 == 0) {
+				cout << "\n00:boÅŸ yer yok\n";
+
+			}
+			else {
+				cout << "\n00:0'a basÄ±n\n";
+			}
+			if (sayÄ±1 == 1 || sayÄ±2 == 1) {
+				cout << "\n15:boÅŸ yer yok\n";
+
+			}
+			else {
+				cout << "\n15:1'a basÄ±n\n";
+			}
+			if (sayÄ±1 == 2 || sayÄ±2 == 2) {
+				cout << "\n30:boÅŸ yer yok\n";
+
+			}
+			else {
+				cout << "\n30:2'a basÄ±n\n";
+			}
+			if (sayÄ±1 == 3 || sayÄ±2 == 3) {
+				cout << "\n45:boÅŸ yer yok\n";
+
+			}
+			else {
+				cout << "\n45:3'a basÄ±n\n";
+			}
 
 
-			int dakika;
+
+			
 			cin >> dakika;
 
-				for (;;) {
-					if (sayı1 == 0 || sayı2 == 0) {
+			for (;;) {
+				if (sayÄ±1 == 0 || sayÄ±2 == 0) {
 
-						if (dakika == 0) {
-							cout << "boş yer yok lütfen başka saati seçiniz";
-							cin >> dakika;
-						}
-						else {
-							break;
-						}
+					if (dakika == 0) {
+						cout << "boÅŸ yer yok lÃ¼tfen baÅŸka saati seÃ§iniz";
+						cin >> dakika;
 					}
-					else if (sayı1 == 1 || sayı2 == 1) {
-
-						if (dakika == 1) {
-							cout << "boş yer yok lütfen başka saati seçiniz";
-							cin >> dakika;
-						}
-						else {
-							break;
-						}
-					}
-					else if (sayı1 == 2 || sayı2 == 2) {
-
-						if (dakika == 2) {
-							cout << "boş yer yok lütfen başka saati seçiniz";
-							cin >> dakika;
-						}
-						else {
-							break;
-						}
-				     }
-						else if (sayı1 == 3 || sayı2 == 3) {
-							cout << "\n45:boş yer yok\n";
-							if (dakika == 3) {
-								cout << "boş yer yok lütfen başka saati seçiniz";
-								cin >> dakika;
-							}
-							else {
-								break;
-							}
-						}
-						else {
-						dakika = dakika;
+					else {
 						break;
 					}
 				}
+				else if (sayÄ±1 == 1 || sayÄ±2 == 1) {
+
+					if (dakika == 1) {
+						cout << "boÅŸ yer yok lÃ¼tfen baÅŸka saati seÃ§iniz";
+						cin >> dakika;
+					}
+					else {
+						break;
+					}
+				}
+				else if (sayÄ±1 == 2 || sayÄ±2 == 2) {
+
+					if (dakika == 2) {
+						cout << "boÅŸ yer yok lÃ¼tfen baÅŸka saati seÃ§iniz";
+						cin >> dakika;
+					}
+					else {
+						break;
+					}
+				}
+				else if (sayÄ±1 == 3 || sayÄ±2 == 3) {
+					cout << "\n45:boÅŸ yer yok\n";
+					if (dakika == 3) {
+						cout << "boÅŸ yer yok lÃ¼tfen baÅŸka saati seÃ§iniz";
+						cin >> dakika;
+					}
+					else {
+						break;
+					}
+				}
+				else {
+					dakika = dakika;
+					break;
+				}
+			}
 			cout << endl;
 			bilet.saat2(dakika);
 
@@ -145,59 +183,113 @@ void  ana_fonksiyon() {
 			cout << "ad : " << ad;
 
 			cout << "\nbulunan sehir : ";
-			bilet.il_tanımlama(plaka1);
+			bilet.il_tanÄ±mlama(plaka1);
 			bilet.il_bilgisi();
 			cout << "\ngidilen sehir : ";
-			bilet.il_tanımlama(plaka);
+			bilet.il_tanÄ±mlama(plaka);
 			bilet.il_bilgisi();
-			cout << "\n hava yolları için h kara yolları için k tuşuna basınız\n";
-			for(;;){
-				int dugme=_getch();
+			cout << "\n hava yollarÄ± iÃ§in h kara yollarÄ± iÃ§in k tuÅŸuna basÄ±nÄ±z\n";
+			for (;;) {
+				 dugme = _getch();
+			
+
 				if (dugme == 'k')
 				{
 
 
-					cout << "\nbilet ücreti : ";
 					kara* karam = new kara();
-					kfiyat(karam);
+					 kfiyat(karam);
 
-					cout << "\ntoplam yolculuk süresi : ";
-					ksüre(karam);
+					
+					
 					break;
 				}
 				else if (dugme == 'h') {
-					cout << "\nbilet ücreti : ";
+				;
 					hava* havam = new hava();
-					hfiyat(havam);
+					
 
-					cout << "\ntoplam yolculuk süresi : ";
-					hsüre(havam);
+					hsÃ¼re(havam);
 					break;
 				}
-				else{
+				else {
 					continue;
 				}
-				
+
 			}
 			cout << "\ngidis saati : ";
 			bilet.saat2(dakika);
-			cout << "\nişlemi onaylıyor musunuz ?\n evet : e      hayır : h";
+			cout << "\niÅŸlemi onaylÄ±yor musunuz ?\n evet : e      hayÄ±r : h";
 
-			
-			switch(_getch()){
+
+			switch (_getch()) {
 			case 'e':
 				system("cls");
-				cout << "işlem onaylandı.";
-				exit(0);
 			
+				cout << "iÅŸlem onaylandÄ±.";
+				cout << "\nbilet numarasÄ± : " << bilet_numarasÄ±<<endl;
+				
+				cÄ±kÄ±s = false;
+			
+				break;
+
 			case 'h':
 				system("cls");
 				break;
 			default:
+				system("cls");
 				continue;
 			}
 
 		}
 
+
+	}
+	void bilgi() {
+		cout << "ad : " << ad;
+
+		cout << "\nbulunan sehir : ";
+		bilet.il_tanÄ±mlama(plaka1);
+		bilet.il_bilgisi();
+		cout << "\ngidilen sehir : ";
+		bilet.il_tanÄ±mlama(plaka);
+		bilet.il_bilgisi();
 	
-}
+		for (;;) {
+			
+
+
+			if (dugme == 'k')
+			{
+
+
+				kara* karam = new kara();
+				kfiyat(karam);
+
+
+
+				break;
+			}
+			else if (dugme == 'h') {
+				;
+				hava* havam = new hava();
+
+
+				hsÃ¼re(havam);
+				break;
+			}
+			else {
+				continue;
+			}
+
+		}
+		cout << "\ngidis saati : ";
+		bilet.saat2(dakika);
+	}
+	void setbiletnumarasÄ±(int _bilet_numarasÄ±) {
+		bilet_numarasÄ± = _bilet_numarasÄ±;
+	}
+	 int getbiletnumarasÄ±() {
+		return bilet_numarasÄ±;
+	}
+};
