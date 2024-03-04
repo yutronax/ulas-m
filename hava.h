@@ -9,24 +9,39 @@ public:
 	void bilgi2() {
 		
 	}
-	void gidisfiyatı(int _sehir2) {
+	void gidisfiyatı(int _sehir,int _sehir2) {
 arac = 400;
 		
-		string metin;
+string metin;
+string metin1;
+int sehir;
+int sehir2;
+	
 		ptr = &_sehir2;
 		metin = il[*ptr];
-		int fiyat = metin.length() * arac;
+		 sehir2 = metin.length() ;
+		ptr = &_sehir;
+		metin1 = il[*ptr];
+		 sehir = metin1.length();
+		fiyat=(sehir + sehir2) * arac;
 		cout << "Bilet fiyatı: " << fiyat << " TL\n";
 	}
-	void gidissüresi(int _sehir) {
-		süre = 15;
+	void gidissüresi(int _sehir, int _sehir2) {
+		süre = 10;
 		int saat = 0;
 		int dakika = 0;
 		int sure;
+		int sehir1;
+		int sehir2;
 		ptr = &_sehir;
 		string metin1;
 		metin1 = il[*ptr];
-		sure = metin1.length() * süre;
+		sehir1 = metin1.length();
+		ptr = &_sehir2;
+		string metin2;
+		metin2 = il[*ptr];
+		sehir2 = metin1.length();
+		sure = (sehir1 + sehir2) * süre;
 		saat = sure / 60;
 		dakika = sure % 60;
 		cout << "Gidiş süresi: " << saat << " saat " << dakika << " dakika\n";
